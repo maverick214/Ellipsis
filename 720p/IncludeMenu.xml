@@ -1,0 +1,1517 @@
+<includes>
+
+	<!-- Menu Common -->
+
+	<include name="Menu_Layout">
+		<focusposition>0</focusposition>
+		<orientation>horizontal</orientation>
+		<scrolltime>250</scrolltime>
+		<itemlayout height="512" width="256">
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>170</width>
+				<height>512</height>
+				<font>Default</font>
+				<align>center</align>
+				<info>ListItem.label</info>
+				<visible>false</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout height="512" width="256">
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>256</width>
+				<height>512</height>
+				<font>Default</font>
+				<align>center</align>
+				<info>ListItem.label</info>
+				<visible>false</visible>
+			</control>
+		</focusedlayout>
+	</include>
+	
+	<include name="Menu_Label">
+	
+		<include>Submenu</include>
+	
+		<control type="group">
+		
+			<visible>!Window.IsActive(1200)</visible>
+			<visible>!Skin.HasSetting(Disable_Icon_Labels)</visible>
+
+			<animation effect="fade" time="300">Visible</animation>
+			<animation effect="fade" time="300">Hidden</animation>
+			<animation effect="fade" time="300">WindowOpen</animation>
+			<animation effect="fade" time="300">WindowClose</animation>
+		
+			<control type="image">
+				<posx>-303</posx>
+				<posy>340</posy>
+				<width>605</width>
+				<height>48</height>
+				<texture>filter_iconlabel.png</texture>
+			</control>
+		
+			<control type="label">
+				<visible>
+					![Container(300).HasFocus(9105) + ControlGroup(8100).HasFocus()] +
+					![Container(300).HasFocus(9104) + ControlGroup(8110).HasFocus()] +
+					![Container(300).HasFocus(9101) + ControlGroup(8120).HasFocus()] +
+					![Container(300).HasFocus(9111) + ControlGroup(8130).HasFocus()]
+				</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<description>Current Selection</description>
+				<posx>-640</posx>
+				<posy>338</posy>
+				<width>1280</width>
+				<height>48</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[Container(300).ListItem.Label][/UPPERCASE]</label>
+				<font>Selected_Item</font>
+				<textcolor>TextSelectedItem</textcolor>
+				<shadowcolor>TextShadow</shadowcolor>
+			</control>
+			
+		</control>
+		
+	</include>
+
+	<!-- Menu Standard Items -->
+
+	<include name="Menu_Scripts">
+		<item id="9100">
+			<visible>!Skin.HasSetting(Disable_Scripts_Home_Icon)</visible>
+			<icon>icon_home_scripts.png</icon>
+			<label>$LOCALIZE[247]</label>
+			<onclick>ActivateWindow(Scripts)</onclick>
+		</item>
+	</include>
+
+	<include name="Menu_Music">
+		<item id="9101">
+			<visible>!Skin.HasSetting(Disable_Music_Home_Icon)</visible>
+			<icon>icon_home_music.png</icon>
+			<label>$LOCALIZE[1211]</label>
+			<onclick>ActivateWindow(MyMusic)</onclick>
+		</item>
+	</include>
+
+	<include name="Menu_Videos">
+		<item id="9102">
+			<visible>!Skin.HasSetting(Disable_Videos_Home_Icon)</visible>
+			<icon>icon_home_videos.png</icon>
+			<label>$LOCALIZE[1212]</label>
+			<onclick>ActivateWindow(MyVideoFiles)</onclick>
+		</item>
+	</include>
+	
+	<include name="Menu_Play_DVD">
+		<item id="9103">
+			<visible>!Skin.HasSetting(Disable_Play_DVD_Home_Icon)</visible>
+			<icon>icon_home_disc.png</icon>
+			<label>$LOCALIZE[50066]</label>
+			<onclick>PlayDVD</onclick>
+			<visible>System.HasMediaDVD</visible>
+		</item>
+	</include>
+	
+	<include name="Menu_Tv_Library">
+		<item id="9104">
+			<visible>!Skin.HasSetting(Disable_Tv_Library_Home_Icon)</visible>
+			<visible>Library.HasContent(TVShows)</visible>
+			<icon>icon_home_tv_library.png</icon>
+			<label>$LOCALIZE[50067]</label>
+			<onclick>ActivateWindow(VideoLibrary,tvshowtitles,return)</onclick>
+		</item>
+	</include>
+	
+	<include name="Menu_Movie_Library">
+		<item id="9105">
+			<visible>!Skin.HasSetting(Disable_Movie_Library_Home_Icon)</visible>
+			<visible>Library.HasContent(Movies)</visible>
+			<icon>icon_home_movie_library.png</icon>
+			<label>$LOCALIZE[20342]</label>
+			<onclick>ActivateWindow(VideoLibrary,movietitles,return)</onclick>
+		</item>
+	</include>
+	
+	<include name="Menu_Music_Video_Library">
+		<item id="9106">
+			<visible>!Skin.HasSetting(Disable_Music_Video_Library_Home_Icon)</visible>
+			<visible>Library.HasContent(MusicVideos)</visible>
+			<icon>icon_home_musicvideo_library.png</icon>
+			<label>$LOCALIZE[50068]</label>
+			<onclick>ActivateWindow(VideoLibrary,musicvideotitles,return)</onclick>
+		</item>
+	</include>
+
+	<include name="Menu_Pictures">
+		<item id="9107">
+			<visible>!Skin.HasSetting(Disable_Pictures_Home_Icon)</visible>
+			<icon>icon_home_pictures.png</icon>
+			<label>$LOCALIZE[1213]</label>
+			<onclick>ActivateWindow(MyPictures)</onclick>
+		</item>
+	</include>
+
+	<include name="Menu_App_Store">
+		<item id="9108">
+			<visible>!Skin.HasSetting(Disable_App_Store_Home_Icon)</visible>
+			<icon>icon_home_games.png</icon>
+			<label>$LOCALIZE[50153]</label>
+		    <onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
+		</item>
+	</include>
+<!--
+	<include name="Menu_FileManager">
+		<item id="9109">
+			<visible>!Skin.HasSetting(Disable_File_Manager_Home_Icon)</visible>
+			<icon>icon_home_filemanager.png</icon>
+			<label>$LOCALIZE[7]</label>
+			<onclick>ActivateWindow(MyFiles)</onclick>
+		</item>
+	</include>
+-->
+	<include name="Menu_Weather">
+		<item id="9110">
+			<visible>!Skin.HasSetting(Disable_Weather_Home_Icon)</visible>
+			<icon>icon_home_weather.png</icon>
+			<label>$LOCALIZE[8]</label>
+			<onclick>ActivateWindow(Weather)</onclick>
+		</item>
+	</include>
+
+	<include name="Menu_Settings">
+		<item id="9111">
+			<icon>icon_home_settings.png</icon>
+			<label>$LOCALIZE[5]</label>
+			<onclick>ActivateWindow(Settings)</onclick>
+		</item>
+	</include>
+	
+	<!-- Settings Items -->
+	
+	<include name="Settings_Videos">
+		<item>
+			<icon>menu\settings\videos.png</icon>
+			<label>$LOCALIZE[50154]</label>
+			<onclick>ActivateWindow(MyVideosSettings)</onclick>
+		</item>
+	</include>
+	
+	<include name="Settings_Music">
+		<item>
+			<icon>menu\settings\music.png</icon>
+			<label>$LOCALIZE[50155]</label>
+			<onclick>ActivateWindow(MyMusicSettings)</onclick>
+		</item>
+	</include>
+	
+	<include name="Settings_Pictures">
+		<item>
+			<icon>menu\settings\pictures.png</icon>
+			<label>$LOCALIZE[50156]</label>
+			<onclick>ActivateWindow(MyPicturesSettings)</onclick>
+		</item>
+	</include>
+<!--		
+	<include name="Settings_Profiles">
+		<item>
+			<icon>menu\settings\profiles.png</icon>
+			<label>$LOCALIZE[50072]</label>
+			<onclick>ActivateWindow(Profiles)</onclick>
+		</item>
+	</include>
+-->	
+	<include name="Settings_Weather">
+		<item>
+			<icon>menu\settings\weather.png</icon>
+			<label>$LOCALIZE[50157]</label>
+			<onclick>ActivateWindow(MyWeatherSettings)</onclick>
+		</item>
+	</include>
+<!--
+	<include name="Settings_Network">
+		<item>
+			<icon>menu\settings\network.png</icon>
+			<label>$LOCALIZE[50158]</label>
+			<onclick>ActivateWindow(NetworkSettings)</onclick>
+		</item>
+	</include>
+-->	
+	<include name="Settings_System">
+		<item>
+			<icon>menu\settings\system.png</icon>
+			<label>$LOCALIZE[50159]</label>
+			<onclick>ActivateWindow(SystemSettings)</onclick>
+		</item>
+	</include>
+	
+	<include name="Settings_Appearance">
+		<item>
+			<icon>menu\settings\appearance.png</icon>
+			<label>$LOCALIZE[50160]</label>
+			<onclick>ActivateWindow(AppearanceSettings)</onclick>
+		</item>
+	</include>
+	
+	<include name="Settings_Skin">
+		<item>
+			<icon>menu\settings\skin.png</icon>
+			<label>$LOCALIZE[50069]</label>
+			<onclick>ActivateWindow(1112)</onclick>
+		</item>
+	</include>
+	
+	<include name="Settings_System_Info">
+		<item>
+			<icon>menu\settings\sys_info.png</icon>
+			<label>$LOCALIZE[50070]</label>
+			<onclick>ActivateWindow(SystemInfo)</onclick>
+		</item>
+	</include>
+	
+	<include name="Menu_Icons">
+
+		<control type="group">
+
+			<posx>0</posx>
+			<posy>0</posy>
+
+			<!-- Home Scroller Icons - Counter Clockwise Mothion -->
+			<control type="group" id="7001">
+
+				<visible>Container(300).OnPrevious</visible>
+				<animation effect="slide" end="0,0" time="250" reversible="false">Hidden</animation>
+
+				<!-- Show Far Left Icon On Move Previous -->
+				<control type="group">
+					<visible>Container(300).OnPrevious</visible>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="250" />
+						<effect type="slide" start="0,0" end="172,0" time="250" />
+					</animation>
+					<animation effect="fade" start="0" end="0" time="0" reversible="false">Visible</animation>
+					<posx>-768</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(-2).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 1 To Icon 2 Position On Move Previous -->
+				<control type="group">
+					<visible>Container(300).OnPrevious</visible>
+					<animation effect="zoom" start="-596,55,128,256" end="-362,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>-596</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(-1).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 2 To Icon 3 Position On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnPrevious + !IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<animation effect="zoom" start="-362,50,160,320" end="-128,0,256,512" time="250" reversible="false">Hidden</animation>
+					<posx>-362</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(0).property(fanart_image)</info>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Container(300).OnPrevious + IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<animation effect="zoom" start="-362,50,160,320" end="-128,30,256,512" time="250" reversible="false">Hidden</animation>
+					<posx>-362</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(0).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 3 To Icon 4 Position On Move Previous -->
+				<control type="group">
+					<visible>Container(300).OnPrevious + !IsEmpty(Container(300).ListItem(1).ActualIcon)</visible>
+					<animation effect="zoom" start="-128,0,256,512" end="212,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>-128</posx>
+					<posy>0</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>256</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Container(300).OnPrevious + IsEmpty(Container(300).ListItem(1).ActualIcon)</visible>
+					<animation effect="zoom" start="-128,30,256,512" end="212,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>-128</posx>
+					<posy>30</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>256</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>38</posx>
+						<posy>52</posy>
+						<width>180</width>
+						<height>100</height>
+						<info>Container(300).listitem(1).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 4 To Icon 5 Position On Move Previous -->
+				<control type="group">
+					<visible>Container(300).OnPrevious</visible>
+					<animation effect="zoom" start="212,50,160,320" end="468,55,128,256" time="250" reversible="false">Hidden</animation>
+					<posx>212</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(2).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Hide Far Right Icon On Move Previous -->
+				<control type="group">
+					<visible>Container(300).OnPrevious</visible>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="250" />
+						<effect type="slide" start="0,0" end="172,0" time="250" />
+					</animation>
+					<posx>468</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(3).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(3).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(3).property(fanart_image)</info>
+					</control>
+				</control>
+
+			</control>
+
+			<!-- Home Scroller Icons - Clockwise Mothion -->
+			<control type="group" id="7002">
+
+				<visible>Container(300).OnNext</visible>
+				<animation effect="slide" end="0,0" time="250" reversible="false">Hidden</animation>
+
+				<!-- Hide Far Left Icon On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext</visible>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="100" end="0" time="250" />
+						<effect type="slide" start="0,0" end="-172,0" time="250" />
+					</animation>
+					<posx>-596</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-3).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-3).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(-3).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 2 To Icon 1 Position On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext</visible>
+					<animation effect="zoom" start="-362,50,160,320" end="-596,55,128,256" time="250" reversible="false">Hidden</animation>
+					<posx>-362</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(-2).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 3 To Icon 2 Position On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext + !IsEmpty(Container(300).ListItem(-1).ActualIcon)</visible>
+					<animation effect="zoom" start="-128,0,256,512" end="-362,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>-128</posx>
+					<posy>0</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>256</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Container(300).OnNext + IsEmpty(Container(300).ListItem(-1).ActualIcon)</visible>
+					<animation effect="zoom" start="-128,30,256,512" end="-362,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>-128</posx>
+					<posy>30</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>256</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>38</posx>
+						<posy>52</posy>
+						<width>180</width>
+						<height>100</height>
+						<info>Container(300).listitem(-1).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 4 To Icon 3 Position On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext + !IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<animation effect="zoom" start="212,50,160,320" end="-128,0,256,512" time="250" reversible="false">Hidden</animation>
+					<posx>212</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(0).property(fanart_image)</info>
+					</control>
+				</control>
+				<control type="group">
+					<visible>Container(300).OnNext + IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<animation effect="zoom" start="212,50,160,320" end="-128,30,256,512" time="250" reversible="false">Hidden</animation>
+					<posx>212</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(0).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Move Icon 5 To Icon 4 Position On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext</visible>
+					<animation effect="zoom" start="468,55,128,256" end="212,50,160,320" time="250" reversible="false">Hidden</animation>
+					<posx>468</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(1).property(fanart_image)</info>
+					</control>
+				</control>
+
+				<!-- Show Far Right Icon On Move Next -->
+				<control type="group">
+					<visible>Container(300).OnNext</visible>
+					<animation type="Hidden" reversible="false">
+						<effect type="fade" start="0" end="100" time="250" />
+						<effect type="slide" start="172,0" end="0,0" time="250" />
+					</animation>
+					<animation effect="fade" start="0" end="0" time="0" reversible="false">Visible</animation>
+					<posx>468</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(2).property(fanart_image)</info>
+					</control>
+				</control>
+
+			</control>
+
+			<!-- Home Scroller Static Icons -->
+			<control type="group" id="7000">
+
+				<animation effect="fade" time="600">WindowOpen</animation>
+				<animation effect="fade" time="600">WindowClose</animation>
+
+				<!-- Icon 1 -->
+				<control type="group">
+					<visible>IsEmpty(Container(300).ListItem(-2).ActualIcon)</visible>
+					<posx>-596</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(-2).property(fanart_image)</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!IsEmpty(Container(300).ListItem(-2).ActualIcon)</visible>
+					<posx>-596</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-2).ActualIcon</info>
+					</control>
+				</control>
+
+				<!-- Icon 2 -->
+				<control type="group">
+					<visible>IsEmpty(Container(300).ListItem(-1).ActualIcon)</visible>
+					<posx>-362</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(-1).property(fanart_image)</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!IsEmpty(Container(300).ListItem(-1).ActualIcon)</visible>
+					<posx>-362</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(-1).ActualIcon</info>
+					</control>
+				</control>
+
+				<!-- Icon 3 -->
+				<control type="group">
+					<visible>IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<posx>-128</posx>
+					<posy>0</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>30</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture>DefaultNetwork.png</texture>
+						<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>		
+						<animation type="Conditional" condition="Control.HasFocus(300)">
+							<effects type="zoom" start="95" end="140" center="auto" time="250" />
+							<effect type="fade" start="75" end="100" center="auto" time="250" />
+						</animation>						
+ 					</control>
+					<control type="largeimage">
+						<posx>38</posx>
+						<posy>82</posy>
+						<width>180</width>
+						<height>100</height>
+						<info>Container(300).listitem(0).property(fanart_image)</info>
+						<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>		
+						<animation type="Conditional" condition="Control.HasFocus(300)">
+							<effects type="zoom" start="95" end="140" center="auto" time="250" />
+							<effect type="fade" start="75" end="100" center="auto" time="250" />
+						</animation>						
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>286</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+						<animation type="Conditional" condition="Control.HasFocus(300)">
+							<effects type="zoom" start="95" end="100" center="auto" time="250" />
+							<effect type="fade" start="75" end="100" center="auto" time="250" />
+						</animation>
+					</control>
+				</control>
+				
+
+				<control type="group">
+					<visible>!IsEmpty(Container(300).ListItem(0).ActualIcon)</visible>
+					<posx>-128</posx>
+					<posy>0</posy>
+					<width>256</width>
+					<height>512</height>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>256</width>
+						<height>256</height>
+						<info>Container(300).ListItem(0).ActualIcon</info>
+						<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>		
+						<animation type="Conditional" condition="Control.HasFocus(300)">
+							<effects type="zoom" start="95" end="100" center="auto" time="250" />
+							<effect type="fade" start="75" end="100" center="auto" time="250" />
+						</animation>						
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>256</posy>
+						<width>256</width>
+						<height>256</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<info>Container(300).ListItem(0).ActualIcon</info>
+						<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+						<animation type="Conditional" condition="Control.HasFocus(300)">
+							<effects type="zoom" start="95" end="100" center="auto" time="250" />
+							<effect type="fade" start="75" end="100" center="auto" time="250" />
+						</animation>
+					</control>
+				</control>
+				
+				<!-- Icon 4 -->
+				<control type="group">
+					<visible>IsEmpty(Container(300).ListItem(1).ActualIcon)</visible>
+					<posx>212</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+					</control>
+					<control type="largeimage">
+						<posx>24</posx>
+						<posy>32</posy>
+						<width>113</width>
+						<height>64</height>
+						<info>Container(300).listitem(1).property(fanart_image)</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+					</control>
+				</control>
+
+				<control type="group">
+					<visible>!IsEmpty(Container(300).ListItem(1).ActualIcon)</visible>
+					<posx>212</posx>
+					<posy>50</posy>
+					<width>160</width>
+					<height>320</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>160</posy>
+						<width>160</width>
+						<height>160</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(1).ActualIcon</info>
+					</control>
+				</control>
+
+				<!-- Icon 5 -->
+				<control type="group">
+					<visible>IsEmpty(Container(300).ListItem(2).ActualIcon)</visible>
+					<posx>468</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+					</control>
+					<control type="largeimage">
+						<posx>19</posx>
+						<posy>25</posy>
+						<width>90</width>
+						<height>52</height>
+						<info>Container(300).listitem(2).property(fanart_image)</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+					</control>
+				</control>
+				<control type="group">
+					<visible>!IsEmpty(Container(300).ListItem(2).ActualIcon)</visible>
+					<posx>468</posx>
+					<posy>55</posy>
+					<width>128</width>
+					<height>256</height>
+					<visible>!Control.IsVisible(7001)  + !Control.IsVisible(7002)</visible>
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+					<control type="image">
+						<posx>0</posx>
+						<posy>128</posy>
+						<width>128</width>
+						<height>128</height>
+						<texture flipy="true" diffuse="fade.png" /> 
+						<texture>DefaultNetwork.png</texture>
+						<info>Container(300).ListItem(2).ActualIcon</info>
+					</control>
+				</control>
+
+			</control>
+
+		</control>
+
+	</include>
+
+	<include name="Menu_Home">
+
+		<control type="group">
+
+			<posx>640</posx>
+			<posy>220</posy>
+
+			<control type="wraplist" id="300">
+				<posx>-640</posx>
+				<posy>0</posy>
+				<height>256</height>
+				<width>1280</width>
+				<ondown>ActivateWindow(1200)</ondown>
+				<onup>8997</onup>
+				<include>Menu_Layout</include>
+				<content>
+					<include>Menu_Videos</include>
+					<include>Menu_Movie_Library</include>
+					<include>Menu_Tv_Library</include>					
+					<include>Menu_Music_Video_Library</include>
+					<include>Menu_Play_DVD</include>
+					<include>Menu_Pictures</include>
+					<include>Menu_App_Store</include>
+		<!--		<include>Menu_FileManager</include> -->
+					<include>Menu_Weather</include>
+					<include>Menu_Settings</include>
+		<!--		<include>Menu_Scripts</include>  -->
+					<include>Menu_Music</include>
+				</content>
+			</control>
+
+			<include>Menu_Icons</include>
+			<include>Menu_Label</include>
+
+		</control>
+
+	</include>
+	
+	<include name="Menu_Config">
+
+		<control type="group">
+
+			<posx>640</posx>
+			<posy>220</posy>
+			
+			<control type="wraplist" id="300">
+				<posx>-640</posx>
+				<posy>0</posy>
+				<height>256</height>
+				<width>1280</width>
+				<ondown>ActivateWindow(1200)</ondown>
+				<include>Menu_Layout</include>
+				<content>
+					<include>Settings_Videos</include>
+					<include>Settings_Music</include>
+					<include>Settings_Pictures</include>
+		<!--		<include>Settings_Profiles</include> -->
+					<include>Settings_Weather</include>
+		<!--		<include>Settings_Network</include> -->
+					<include>Settings_System</include>
+					<include>Settings_Appearance</include>
+					<include>Settings_Skin</include>
+					<!--<include>Settings_System_Info</include>-->
+				</content>
+			</control>
+
+			<include>Menu_Icons</include>
+			<include>Menu_Label</include>
+
+		</control>
+		
+	</include>
+	
+	
+	
+	<!--
+	
+		SUBMENU
+	
+	-->
+	
+	
+	<include name="Submenu_Controls">
+		<!-- OnUp Control -->
+		<control type="button" id="8997">
+			<onfocus>SetFocus(8100)</onfocus>
+			<onfocus>SetFocus(8105)</onfocus>
+			<visible>Container(300).HasFocus(9105)</visible>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="button" id="8997">
+			<onfocus>SetFocus(8110)</onfocus>
+			<onfocus>SetFocus(8114)</onfocus>
+			<visible>Container(300).HasFocus(9104)</visible>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="button" id="8997">
+			<onfocus>SetFocus(8120)</onfocus>
+			<onfocus>SetFocus(8125)</onfocus>
+			<visible>Container(300).HasFocus(9101)</visible>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+		<control type="button" id="8997">
+			<onfocus>SetFocus(8130)</onfocus>
+			<onfocus>SetFocus(8139)</onfocus>
+			<visible>Container(300).HasFocus(9111)</visible>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+				
+		<!-- OnLeft Control -->
+		<control type="button" id="8998">
+			<onfocus>Control.Move(300,-1)</onfocus>
+			<onfocus>SetFocus(300)</onfocus>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+		
+		<!-- OnRight Control -->
+		<control type="button" id="8999">
+			<onfocus>Control.Move(300,1)</onfocus>
+			<onfocus>SetFocus(300)</onfocus>
+			<texturefocus>-</texturefocus>
+     		<texturenofocus>-</texturenofocus>
+		</control>
+	</include>
+	
+	<include name="Submenu_Layout">
+		<posx>-302</posx>
+		<posy>342</posy>
+		<width>605</width>
+		<height>40</height>
+		<align>center</align>
+		<onup>-</onup>
+		<ondown>300</ondown>
+		<onleft>8998</onleft>
+		<onright>8999</onright>
+		<scrolltime>0</scrolltime>
+	</include>
+	
+	<include name="Submenu_Arrow">			
+		<control type="image">
+			<visible>
+				[ Container(300).HasFocus(9105) + [ !ControlGroup(8100).HasFocus() | Container(8100).HasPrevious ] ] | 
+				[ Container(300).HasFocus(9104) + [ !ControlGroup(8110).HasFocus() | Container(8110).HasPrevious ] ] | 
+				[ Container(300).HasFocus(9101) + [ !ControlGroup(8120).HasFocus() | Container(8120).HasPrevious ] ] | 
+				[ Container(300).HasFocus(9111) + [ !ControlGroup(8130).HasFocus() | Container(8130).HasPrevious ] ]
+			</visible>
+			<posx>-8</posx>
+			<posy>328</posy>
+			<width>17</width>
+			<height>16</height>
+			<texture>menu/submenu/arrow.png</texture>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<animation effect="fade" pulse="true" 
+				start="40" end="80" time="800"
+				condition="[ Container(300).HasFocus(9105) + [ !ControlGroup(8100).HasFocus() | Container(8100).HasPrevious ] ] | [ Container(300).HasFocus(9104) + [ !ControlGroup(8110).HasFocus() | Container(8110).HasPrevious ] ] | [ Container(300).HasFocus(9101) + [ !ControlGroup(8120).HasFocus() | Container(8120).HasPrevious ] ] | [ Container(300).HasFocus(9111) + [ !ControlGroup(8130).HasFocus() | Container(8130).HasPrevious ] ]">
+				Conditional
+			</animation>
+		</control>
+		
+		<control type="image">
+			<visible>
+				ControlGroup(8100).HasFocus() |
+				ControlGroup(8110).HasFocus() |
+				ControlGroup(8120).HasFocus() |
+				ControlGroup(8130).HasFocus()
+			</visible>
+			<posx>-8</posx>
+			<posy>383</posy>
+			<width>17</width>
+			<height>16</height>
+			<texture>menu/submenu/down_arrow.png</texture>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<animation effect="fade" pulse="true" 
+				start="40" end="80" time="800"
+				condition="ControlGroup(8100).HasFocus() | ControlGroup(8110).HasFocus() | ControlGroup(8120).HasFocus() | ControlGroup(8130).HasFocus()">
+				Conditional
+			</animation>
+		</control>
+	</include>
+	
+	<include name="Submenu_Button">
+		<width>605</width>
+		<height>40</height>
+		<align>center</align>
+		<texturefocus>-</texturefocus>
+     	<texturenofocus>-</texturenofocus>
+		<font>Selected_Item</font>
+		<textcolor>TextSelectedItem</textcolor>
+		<shadowcolor>TextShadow</shadowcolor>
+	</include>
+	
+	<include name="Submenu_Movies">
+		<control type="grouplist" id="8100">
+			<visible allowhiddenfocus="false">ControlGroup(8100).HasFocus() + Container(300).HasFocus(9105)</visible>
+			<animation effect="fade" time="300">VisibleChange</animation>
+			<include>Submenu_Layout</include>
+					
+			<control type="button" id="8101">
+				<onclick>ActivateWindow(VideoLibrary,movieyears,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50165][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8102">
+				<onclick>ActivateWindow(VideoLibrary,movieactors,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50164][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8103">
+				<onclick>ActivateWindow(VideoLibrary,moviegenres,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50163][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8104">
+				<onclick>ActivateWindow(VideoLibrary,moviestudios,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50162][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8105">
+				<onclick>ActivateWindow(VideoLibrary,recentlyaddedmovies,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50161][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			
+		</control>
+	</include>
+	
+	<include name="Submenu_TVShows">
+		<control type="grouplist" id="8110">
+			<visible allowhiddenfocus="false">ControlGroup(8110).HasFocus() + Container(300).HasFocus(9104)</visible>
+			<animation effect="fade" time="300">VisibleChange</animation>
+			<include>Submenu_Layout</include>
+				
+			<control type="button" id="8111">
+				<onclick>ActivateWindow(VideoLibrary,tvshowyears,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50165][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8112">
+				<onclick>ActivateWindow(VideoLibrary,tvshowactors,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50164][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8113">
+				<onclick>ActivateWindow(VideoLibrary,tvshowgenres,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50163][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8114">
+				<onclick>ActivateWindow(VideoLibrary,recentlyaddedepisodes,return)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50161][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			
+		</control>
+	</include>
+	
+	<include name="Submenu_Music">
+		<control type="grouplist" id="8120">
+			<visible allowhiddenfocus="false">ControlGroup(8120).HasFocus() + Container(300).HasFocus(9101)</visible>
+			<animation effect="fade" time="300">VisibleChange</animation>
+			<include>Submenu_Layout</include>
+			
+			<control type="button" id="8121">
+				<onclick>ActivateWindow(10501,plex://localhost/music/iTunes/PlayLists/)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50166][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>	
+			<control type="button" id="8122">
+				<onclick>ActivateWindow(10501,plex://localhost/music/iTunes/Genre/)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50167][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8123">
+				<onclick>ActivateWindow(10501,plex://localhost/music/iTunes/Albums/)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50168][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8124">
+				<onclick>ActivateWindow(10501,plex://localhost/music/iTunes/Artists/)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50169][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8125">
+				<onclick>ActivateWindow(10501,plex://localhost/music/iTunes/Most Played/)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50170][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			
+		</control>
+	</include>
+	
+	<include name="Submenu_Settings">
+		<control type="grouplist" id="8130">
+			<visible allowhiddenfocus="false">ControlGroup(8130).HasFocus() + Container(300).HasFocus(9111)</visible>
+			<animation effect="fade" time="300">VisibleChange</animation>
+			<include>Submenu_Layout</include>
+			
+			<control type="button" id="8131">
+				<onclick>ActivateWindow(Profiles)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50171][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8132">
+				<onclick>ActivateWindow(NetworkSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50172][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8133">
+				<onclick>ActivateWindow(SystemSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50173][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8134">
+				<onclick>ActivateWindow(MyWeatherSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50174][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8135">
+				<onclick>ActivateWindow(MyPicturesSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50175][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>	
+			<control type="button" id="8136">
+				<onclick>ActivateWindow(MyMusicSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50176][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8137">
+				<onclick>ActivateWindow(MyVideosSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50177][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8138">
+				<onclick>ActivateWindow(AppearanceSettings)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50178][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+			<control type="button" id="8139">
+				<onclick>ActivateWindow(1112)</onclick>
+				<label>[UPPERCASE]$LOCALIZE[50179][/UPPERCASE]</label>
+				<include>Submenu_Button</include>
+			</control>
+		</control>
+	</include>
+	
+	<include name="Submenu">
+		<include>Submenu_Controls</include>
+		<include>Submenu_Arrow</include>
+		<include>Submenu_Movies</include>
+		<include>Submenu_TVShows</include>
+		<include>Submenu_Music</include>
+		<include>Submenu_Settings</include>
+	</include>
+
+</includes>
+	

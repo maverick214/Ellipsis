@@ -1,0 +1,641 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p
+END
+DialogButtonMenu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogButtonMenu.xml
+END
+PlayerControls.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/PlayerControls.xml
+END
+Pointer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/Pointer.xml
+END
+DialogFileStacking.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogFileStacking.xml
+END
+FileBrowser.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/FileBrowser.xml
+END
+IncludeDock.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDock.xml
+END
+DialogProgress.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogProgress.xml
+END
+MusicOSD.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MusicOSD.xml
+END
+DialogMuteBug.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogMuteBug.xml
+END
+StartupDisabled.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/StartupDisabled.xml
+END
+custom_SkinSetting.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_SkinSetting.xml
+END
+MyVideoPlaylist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyVideoPlaylist.xml
+END
+SettingsCategory.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SettingsCategory.xml
+END
+DialogPluginSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogPluginSettings.xml
+END
+MyPrograms.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyPrograms.xml
+END
+DialogVideoInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogVideoInfo.xml
+END
+IncludeLoginView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeLoginView.xml
+END
+DialogPictureInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogPictureInfo.xml
+END
+defaults.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/defaults.xml
+END
+IncludeGameView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeGameView.xml
+END
+MyVideoNav.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyVideoNav.xml
+END
+IncludeSnapsView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeSnapsView.xml
+END
+DialogContextMenu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogContextMenu.xml
+END
+custom_DockWeather.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_DockWeather.xml
+END
+MusicVisualisation.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MusicVisualisation.xml
+END
+MyMusicNav.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyMusicNav.xml
+END
+DialogAlbumInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogAlbumInfo.xml
+END
+DialogSeekBar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogSeekBar.xml
+END
+IncludeShowCaseVinylView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeShowCaseVinylView.xml
+END
+IncludeTileHybridView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeTileHybridView.xml
+END
+IncludeVinylView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeVinylView.xml
+END
+MyMusicSongs.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyMusicSongs.xml
+END
+SlideShow.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SlideShow.xml
+END
+DialogSlider.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogSlider.xml
+END
+MusicKaraokeLyrics.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MusicKaraokeLyrics.xml
+END
+DialogMusicScan.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogMusicScan.xml
+END
+Font.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/Font.xml
+END
+VideoOverlay.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VideoOverlay.xml
+END
+FileManager.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/FileManager.xml
+END
+IncludeDVDView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDVDView.xml
+END
+DialogVolumeBar.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogVolumeBar.xml
+END
+DialogYesNo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogYesNo.xml
+END
+IncludeDockIcons.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDockIcons.xml
+END
+DialogKeyboard.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogKeyboard.xml
+END
+MyGameSaves.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyGameSaves.xml
+END
+SettingsProfile.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SettingsProfile.xml
+END
+IncludeProfilesView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeProfilesView.xml
+END
+MusicOverlay.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MusicOverlay.xml
+END
+IncludeLibraryInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeLibraryInfo.xml
+END
+VideoOSDBookmarks.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VideoOSDBookmarks.xml
+END
+Home.xml
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/Home.xml
+END
+VideoFullScreen.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VideoFullScreen.xml
+END
+IncludeDebug.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDebug.xml
+END
+custom_DockPlaylist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_DockPlaylist.xml
+END
+DialogFullScreenInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogFullScreenInfo.xml
+END
+DialogKaiToast.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogKaiToast.xml
+END
+DialogSelect.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogSelect.xml
+END
+DialogKaraokeSongSelectorLarge.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogKaraokeSongSelectorLarge.xml
+END
+Settings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/Settings.xml
+END
+DialogSongInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogSongInfo.xml
+END
+MyWeather.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyWeather.xml
+END
+custom_DockContent.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_DockContent.xml
+END
+IncludeMenu.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeMenu.xml
+END
+MyMusicPlaylist.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyMusicPlaylist.xml
+END
+SettingsScreenCalibration.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SettingsScreenCalibration.xml
+END
+IncludeListView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeListView.xml
+END
+IncludeGameHybridView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeGameHybridView.xml
+END
+DialogContentSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogContentSettings.xml
+END
+MyMusicPlaylistEditor.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyMusicPlaylistEditor.xml
+END
+SmartPlaylistEditor.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SmartPlaylistEditor.xml
+END
+DialogMediaSource.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogMediaSource.xml
+END
+ProfileSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/ProfileSettings.xml
+END
+SettingsSystemInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SettingsSystemInfo.xml
+END
+DialogNumeric.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogNumeric.xml
+END
+DialogKaraokeSongSelector.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogKaraokeSongSelector.xml
+END
+TrainerSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/TrainerSettings.xml
+END
+custom_Credits.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_Credits.xml
+END
+DialogOK.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogOK.xml
+END
+MusicOSDVisSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MusicOSDVisSettings.xml
+END
+IncludeDockOSD.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDockOSD.xml
+END
+DialogNetworkSetup.xml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogNetworkSetup.xml
+END
+DialogVideoScan.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogVideoScan.xml
+END
+IncludeTileView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeTileView.xml
+END
+MyScripts.xml
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyScripts.xml
+END
+VideoOSDSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VideoOSDSettings.xml
+END
+IncludeFlags.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeFlags.xml
+END
+DialogScriptInfo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogScriptInfo.xml
+END
+SmartPlaylistRule.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/SmartPlaylistRule.xml
+END
+DialogBusy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogBusy.xml
+END
+MyPics.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyPics.xml
+END
+includes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/includes.xml
+END
+DialogFavourites.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogFavourites.xml
+END
+LoginScreen.xml
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/LoginScreen.xml
+END
+IncludeTBBNews.xml
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeTBBNews.xml
+END
+LockSettings.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/LockSettings.xml
+END
+IncludeFileStack.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeFileStack.xml
+END
+VisualisationPresetList.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VisualisationPresetList.xml
+END
+custom_DockMedia.xml
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/custom_DockMedia.xml
+END
+IncludeShowCaseView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeShowCaseView.xml
+END
+IncludeAnims.xml
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeAnims.xml
+END
+IncludeCommonViewTypes.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeCommonViewTypes.xml
+END
+MyVideo.xml
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/MyVideo.xml
+END
+VideoOSD.xml
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/VideoOSD.xml
+END
+IncludeShowCaseHybridView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeShowCaseHybridView.xml
+END
+IncludeDVDHybridView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/IncludeDVDHybridView.xml
+END
+DialogGamepad.xml
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svnroot/xboxmediacenter/!svn/ver/2673/Ellipsis/720p/DialogGamepad.xml
+END

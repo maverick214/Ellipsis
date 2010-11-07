@@ -1,0 +1,1183 @@
+<includes>
+
+	<include file="defaults.xml" />
+	<include file="IncludeDock.xml" />
+	<include file="IncludeDockOSD.xml" />
+	<include file="IncludeDockIcons.xml" />
+	<include file="IncludeMenu.xml" />
+	<include file="IncludeCommonViewTypes.xml" />
+	<include file="IncludeLibraryInfo.xml" />
+	<include file="IncludeFlags.xml" />
+	<include file="IncludeFileStack.xml" />
+	<include file="IncludeAnims.xml" />
+	<include file="Revision.xml" />
+	<include file="IncludeTBBNews.xml" />
+	<include file="IncludeDebug.xml" />
+
+	<include name="Sort_Letter">
+	    <control type="group">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>143</width>
+			<height>143</height>
+			<visible>Container.Scrolling</visible>
+			<animation type="Visible">
+				<effect type="zoom" start="10" end="100" center="auto" time="100" tween="elastic" easing="out" reversible="false" />
+				<effect type="fade" start="0" end="100" time="100" tween="sine" easing="out" reversible="false" />
+			</animation>
+			<animation type="Hidden">
+				<effect type="zoom" start="100" end="10" center="auto" time="300" tween="back" easing="in" reversible="false" />
+				<effect type="fade" start="100" end="0" time="300" tween="sine" easing="in" reversible="false" />
+			</animation>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>143</width>
+				<height>143</height>
+				<texture>dialogs\dialog_sort_letter.png</texture>
+			</control>
+			<control type="label">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>143</width>
+				<height>143</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.SortLetter]</label>
+				<textcolor>Text</textcolor>
+				<font>Selected_Item</font>
+			</control>
+        </control>
+	</include>
+	
+	<include name="FolderName">
+		<control type="group">
+			<visible>!Skin.HasSetting(Disable_Current_Section)</visible>
+			<control type="image">
+				<posx>32</posx>
+				<posy>630</posy>
+				<width>64</width>
+				<height>64</height>
+				<texture>current_folder.png</texture>
+				<visible>!IsEmpty(Container.FolderName)</visible>
+			</control>
+			<control type="fadelabel">
+				<posx>96</posx>
+				<posy>648</posy>
+				<width>475</width>
+				<height>40</height>
+				<label>$INFO[Container.FolderName]</label>
+				<font>Folder_Name</font>
+				<textcolor>Text</textcolor>
+			</control>
+		</control>
+	</include>
+	
+	<include name="Now_Playing_Widget">
+		<control type="group">
+			<visible>!Skin.HasSetting(Disable_Now_Playing_Widget)</visible>
+			<control type="group">
+				<posx>1140</posx>
+				<posy>610</posy>
+				<width>130</width>
+				<height>130</height>
+				<visible>Player.HasAudio</visible>
+				<control type="image">
+					<posx>28</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>90</height>
+					<texture>record.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio align="center" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="record-diffuse.png">$INFO[MusicPlayer.Cover]</texture> 
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>90</width>
+					<height>90</height>
+					<texture>record-front.png</texture>
+				</control>	
+				<control type="image">
+					<posx>28</posx>
+					<posy>83</posy>
+					<width>90</width>
+					<height>90</height>
+					<texture flipy="true" diffuse="fade.png">record.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>83</posy>
+					<width>90</width>
+					<height>90</height>
+					<aspectratio align="center" scalediffuse="false">scale</aspectratio>
+					<texture flipy="true" diffuse="record-reflect-diffuse.png">$INFO[MusicPlayer.Cover]</texture> 
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>83</posy>
+					<width>90</width>
+					<height>90</height>
+					<texture flipy="true" diffuse="record-reflect-diffuse.png">record-front.png</texture>
+				</control>	
+			</control>	
+			
+			<control type="group">
+				<posx>1140</posx>
+				<posy>590</posy>
+				<width>130</width>
+				<height>130</height>
+				<visible>Player.HasVideo</visible>
+				<control type="image">
+					<posx>35</posx>
+					<posy>20</posy>
+					<width>61</width>
+					<height>90</height>
+					<aspectratio align="center" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="dvdbox-diffuse.png">$INFO[VideoPlayer.Cover]</texture> 
+				</control>
+				<control type="image">
+					<posx>35</posx>
+					<posy>20</posy>
+					<width>61</width>
+					<height>90</height>
+					<texture>dvdbox-overlay.png</texture>
+				</control>
+				<control type="image">
+					<posx>35</posx>
+					<posy>110</posy>
+					<width>61</width>
+					<height>90</height>
+					<aspectratio align="center" scalediffuse="false">keep</aspectratio>
+					<texture flipy="true" diffuse="dvdbox-reflect-diffuse.png">$INFO[VideoPlayer.Cover]</texture> 
+				</control>
+				<control type="image">
+					<posx>35</posx>
+					<posy>110</posy>
+					<width>61</width>
+					<height>90</height>
+					<texture flipy="true" diffuse="dvdbox-reflect-diffuse.png">dvdbox-overlay.png</texture>
+				</control>
+			</control>	
+
+			<control type="group">
+				<visible>Player.HasAudio</visible>
+				<control type="label">
+					<posx>1130</posx>
+					<posy>610</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Artist]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+				<control type="label">
+					<posx>1130</posx>
+					<posy>631</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Title]</label>
+					<font>Cuurently_Playing</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+				<control type="label">
+					<posx>1130</posx>
+					<posy>656</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Album]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+			</control>
+			<control type="group">
+				<visible>Player.HasVideo</visible>
+				<control type="label">
+					<posx>1130</posx>
+					<posy>610</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Year]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+				<control type="label">
+					<posx>1130</posx>
+					<posy>631</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[VideoPlayer.Title]</label>
+					<font>Cuurently_Playing</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+				<control type="label">
+					<posx>1130</posx>
+					<posy>656</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[MusicPlayer.Director]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+				</control>	
+			</control>
+			<control type="group">
+				<visible>Player.HasMedia</visible>
+				<control type="label">
+					<posx>1130</posx>
+					<posy>678</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[Player.Time] / $INFO[Player.Duration]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+					<visible>!Player.Seeking</visible>
+				</control>	
+				<control type="label">
+					<posx>1130</posx>
+					<posy>678</posy>
+					<width>420</width>
+					<align>right</align>
+					<label>$INFO[Player.SeekTime] / $INFO[Player.Duration]</label>
+					<font>Cuurently_Playing_Info</font>
+					<textcolor>Text</textcolor>
+					<scroll>true</scroll>
+					<visible>Player.Seeking</visible>
+				</control>	
+			</control>	
+			
+		</control>		
+	</include>
+
+	<!-- Background -->
+	<include name="Background">
+	
+		<control type="image">
+			<description>Background Image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>Background.png</texture>
+			<!--<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>-->
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>![!IsEmpty(Fanart.Image) + IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![!Skin.HasSetting(Disable_Fanart) + IsEmpty(Fanart.Image) + !IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![Skin.HasSetting(Enable_Custom_Background) + !IsEmpty(Skin.String(Custom_Background))]</visible>
+			<visible>![Skin.HasSetting(Enable_Custom_Background_Folder) + !IsEmpty(Skin.String(Custom_Background_Folder))]</visible>		
+			<visible>!Skin.HasSetting(Enable_Time_Of_Day_Background)</visible>
+		</control>
+		
+		<control type="visualisation">
+			<description>Visualisation</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<visible>!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio</visible>
+		</control>
+		
+		<control type="videowindow">
+			<description>Video</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<visible>!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo</visible>
+		</control>
+		
+		<control type="largeimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture diffuse="background-diffuse.png" background="true">$INFO[Fanart.Image]</texture>
+			<fadetime>300</fadetime>
+			<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>!IsEmpty(Fanart.Image) + IsEmpty(Listitem.Property(Fanart_Image))</visible>
+		</control>
+		
+		<control type="largeimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture diffuse="background-diffuse.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+			<fadetime>300</fadetime>
+			<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>!Skin.HasSetting(Disable_Fanart) + !IsEmpty(Listitem.Property(Fanart_Image))</visible>
+		</control>
+				
+		<control type="largeimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<info>Skin.String(Custom_Background)</info>				
+			<texture diffuse="background-diffuse.png" background="true"/> 
+			<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>![!IsEmpty(Fanart.Image) + IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![!Skin.HasSetting(Disable_Fanart) + IsEmpty(Fanart.Image) + !IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>Skin.HasSetting(Enable_Custom_Background) + !IsEmpty(Skin.String(Custom_Background))</visible>
+		</control>
+		
+		<control type="multiimage">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<info>Skin.String(Custom_Background_Folder)</info>
+			<timeperimage>10000</timeperimage>
+			<randomize>true</randomize>
+			<colordiffuse>BackgroundDiffuse</colordiffuse>
+			<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>![!IsEmpty(Fanart.Image) + IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![!Skin.HasSetting(Disable_Fanart) + IsEmpty(Fanart.Image) + !IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![Skin.HasSetting(Enable_Custom_Background) + !IsEmpty(Skin.String(Custom_Background))]</visible>
+			<visible>Skin.HasSetting(Enable_Custom_Background_Folder) + !IsEmpty(Skin.String(Custom_Background_Folder))</visible>
+		</control>
+		
+		<control type="group">
+
+			<!--<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>-->
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>![!IsEmpty(Fanart.Image) + IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![!Skin.HasSetting(Disable_Fanart) + IsEmpty(Fanart.Image) + !IsEmpty(Listitem.Property(Fanart_Image))]</visible>
+			<visible>![Skin.HasSetting(Enable_Custom_Background) + !IsEmpty(Skin.String(Custom_Background))]</visible>
+			<visible>![Skin.HasSetting(Enable_Custom_Background_Folder) + !IsEmpty(Skin.String(Custom_Background_Folder))]</visible>		
+			<visible>Skin.HasSetting(Enable_Time_Of_Day_Background)</visible>
+		
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff2b2a27</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(00:00,00:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff433d27</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(01:00,01:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff6b5c27</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(02:00,02:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff977e27</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(03:00,03:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffc09f27</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(04:00,04:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffdfba26</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(05:00,05:59)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffecc82a</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(06:00,06:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffe0ca41</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(07:00,07:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffc2c863</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(08:00,08:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff99c08b</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(09:00,09:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff6eb2b1</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(10:00,10:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff4ca3ce</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(11:00,11:59)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff3993da</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(12:00,12:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff4082d1</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(13:00,13:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff5c6db5</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(14:00,14:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff83558c</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(15:00,15:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffac3d5f</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(16:00,16:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffcc2736</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(17:00,17:59)</visible>
+			</control>
+			
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffd91618</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(18:00,18:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffcd0c08</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(19:00,19:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ffae0601</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(20:00,20:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff830300</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(21:00,21:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff540100</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(22:00,22:59)</visible>
+			</control>
+			<control type="image">
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<colordiffuse>ff280100</colordiffuse>
+				<texture>background-timeofday.png</texture>
+				<animation effect="fade" time="60000">Visible</animation>
+				<animation effect="fade" time="60000">Hidden</animation>
+				<visible>System.Time(23:00,23:59)</visible>
+			</control>
+		
+		</control>
+
+		<control type="multiimage">
+			<animations effect="fade" time="600">Visible</animations>
+			<animations effect="fade" time="600">Hidden</animations>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<imagepath>cerberus</imagepath>
+			<timeperimage>0</timeperimage>
+			<fadetime>0</fadetime>
+			<loop>yes</loop>
+			<randomize>false</randomize>
+			<visible>![!Skin.HasSetting(Disable_Visualisation) + Player.HasAudio]</visible>
+			<visible>![!Skin.HasSetting(Disable_Background_Video) + Player.HasVideo]</visible>
+			<visible>Skin.HasSetting(Enable_Cerberus_Background_Effect)</visible>
+		</control>
+	
+	</include>
+
+	<!-- Ellipsis Visor Filter -->
+	<include name="Visor_Filter_Top">
+		<control type="image">
+			<description>Ellipsis Visor Filter Top</description>
+			<visible>!Skin.HasSetting(Disable_Visor)</visible>
+			<posx>0</posx>
+			<posy>-65</posy>
+			<width>1280</width>
+			<height>257</height>
+			<texture>filter_visor_top.png</texture>
+		</control>
+	</include>
+	<include name="Visor_Filter_Bottom">
+		<control type="image">		
+			<description>Ellipsis Visor Filter Bottom</description>
+			<visible>!Skin.HasSetting(Disable_Visor)</visible>
+			<posx>0</posx>
+			<posy>526</posy>
+			<width>1280</width>
+			<height>273</height>
+			<texture>filter_visor_bottom.png</texture>
+		</control>
+	</include>
+	
+	<include name="Visor_Fullscreen_Filter_Top">
+		<control type="group">
+			<control type="image">
+				<description>Ellipsis Visor Filter Top</description>
+				<posx>0</posx>
+				<posy>-48</posy>
+				<width>1280</width>
+				<height>257</height>
+				<texture>filter_visor_fullscreen_top.png</texture>
+			</control>
+		</control>
+	</include>
+	<include name="Visor_Fullscreen_Filter_Bottom">
+		<control type="group">
+			<control type="image">		
+				<description>Ellipsis Visor Filter Bottom</description>
+				<posx>0</posx>
+				<posy>480</posy>
+				<width>1280</width>
+				<height>273</height>
+				<texture>filter_visor_fullscreen_bottom.png</texture>
+			</control>
+		</control>
+	</include>
+	
+	<include name="Visor_Filter">
+		<control type="group">
+			<include>Visor_Filter_Top</include>
+			<include>Visor_Filter_Bottom</include>
+		</control>
+	</include>
+
+	<!-- Edge Filter -->
+	<include name="Edge_Filter">
+		<control type="image">
+			<description>Edge Filter</description>
+			<visible>!Skin.HasSetting(Disable_Edge_Filter)</visible>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>filter_edges.png</texture>
+		</control>
+	</include>
+	
+	<!-- Section Titles -->
+	<include name="TopSectionTitle">
+		<posx>0</posx>
+		<posy>0</posy>
+		<width>1280</width>
+		<align>center</align>
+		<font>Time</font>
+		<textcolor>Text</textcolor>
+	</include>
+	<include name="TopSectionSubtitle">
+		<posx>0</posx>
+		<posy>88</posy>
+		<width>1280</width>
+		<align>center</align>
+		<font>Date</font>
+		<textcolor>Text</textcolor>
+	</include>
+	<include name="BottomSectionTitle">
+		<posx>20</posx>
+		<posy>605</posy>
+		<width>500</width>
+		<height>50</height>
+		<align>left</align>
+		<font>Time</font>
+		<textcolor>Text</textcolor>
+	</include>
+	<include name="BottomSectionSubtitle">
+		<posx>20</posx>
+		<posy>670</posy>
+		<width>1280</width>
+		<align>left</align>
+		<font>Date_Bottom</font>
+		<textcolor>Text</textcolor>
+	</include>
+	<include name="BottomSectionTitleNoSubtitle">
+		<posx>20</posx>
+		<posy>638</posy>
+		<width>500</width>
+		<height>50</height>
+		<align>left</align>
+		<font>Time</font>
+		<textcolor>Text</textcolor>
+	</include>	
+	
+	<!-- Current Section -->
+	<include name="CurrentSection">
+	
+		<!-- Top Section -->
+		<control type="group">
+			<visible>
+				Skin.HasSetting(Show_Clock_Bottom_Left) +
+				!Skin.HasSetting(Disable_Current_Section)
+			</visible>
+			
+			<!-- Num Items -->
+			<control type="label">
+				<visible>
+					![Container.Content(episodes) ] + 
+					[ Window.IsActive(videolibrary) | 
+					  Window.IsActive(MyVideoFiles) |  
+					  Window.IsActive(MyPictures) |
+					  Window.IsActive(musicfiles) | 
+					  Window.IsActive(musiclibrary) ]
+				</visible>
+				<label>$INFO[Container.NumItems] Items</label>
+				<include>TopSectionSubtitle</include>
+			</control>
+			
+			<!-- Num Episodes -->
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<label>$INFO[Container.NumItems] Episodes</label>
+				<include>TopSectionSubtitle</include>
+			</control>
+						
+			<!-- Settings -->
+			<control type="label">
+				<visible>
+					Window.IsActive(Settings) | 
+					Window.IsActive(MyVideosSettings) | 
+					Window.IsActive(MyMusicSettings) | 
+					Window.IsActive(MyPicturesSettings) | 
+					Window.IsActive(Profiles) | 
+					Window.IsActive(MyWeatherSettings) | 
+					Window.IsActive(NetworkSettings) | 
+					Window.IsActive(SystemSettings) | 
+					Window.IsActive(AppearanceSettings) | 
+					Window.IsActive(1112)
+				</visible>
+				<label>$LOCALIZE[5]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Weather -->
+			<control type="label">
+				<visible>Window.IsActive(Weather)</visible>
+				<label>$LOCALIZE[50105]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Pictures -->
+			<control type="label">
+				<visible>Window.IsActive(MyPictures)</visible>
+				<label>$LOCALIZE[1213]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Scripts -->
+			<control type="label">
+				<visible>Window.IsActive(Scripts)</visible>
+				<label>$LOCALIZE[247]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- App Store -->
+			<control type="label">
+				<visible>Window.IsActive(MyPrograms)</visible>
+				<label>$LOCALIZE[50153]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Videos -->
+			<control type="label">
+				<visible>false</visible>
+				<label>$LOCALIZE[1212]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Movies -->
+			<control type="label">
+				<visible>Container.Content(movies)</visible>
+				<label>$LOCALIZE[20342]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- TV Shows -->
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<label>$LOCALIZE[50067]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Container.Content(seasons)</visible>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			
+			<!-- Music -->
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + !Container.Content(songs) + !Container.Content(albums)</visible>
+				<label>$LOCALIZE[1211]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + Container.Content(albums)</visible>
+				<label>$INFO[ListItem.Artist]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + Container.Content(songs)</visible>
+				<label>$INFO[ListItem.Artist] - $INFO[ListItem.Album]</label>
+				<include>TopSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Window.IsActive(musicplaylist)</visible>
+				<label>$LOCALIZE[1211]</label>
+				<include>TopSectionTitle</include>
+			</control>
+		</control>
+		
+		<!-- Bottom Section -->
+		<control type="group">
+			<visible>
+				!Skin.HasSetting(Show_Clock_Bottom_Left) +
+				!Skin.HasSetting(Disable_Current_Section)
+			</visible>
+			
+			<!-- Num Items -->
+			<control type="label">
+				<visible>
+					![ Container.Content(episodes) ] + 
+					[ Window.IsActive(videolibrary) | 
+					  Window.IsActive(MyVideoFiles) |  
+					  Window.IsActive(MyPictures) |
+					  Window.IsActive(musicfiles) | 
+					  Window.IsActive(musiclibrary) ]
+				</visible>
+				<label>$INFO[Container.SecondTitle] ($INFO[Container.NumItems] Items)</label>
+				<include>BottomSectionSubtitle</include>
+			</control>
+			
+			<!-- Num Episodes -->
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<label>$INFO[Container.SecondTitle] ($INFO[Container.NumItems] Episodes)</label>
+				<include>BottomSectionSubtitle</include>
+			</control>
+			
+			<!-- Settings -->
+			<control type="label">
+				<visible>
+					Window.IsActive(Settings) | 
+					Window.IsActive(MyVideosSettings) | 
+					Window.IsActive(MyMusicSettings) | 
+					Window.IsActive(MyPicturesSettings) | 
+					Window.IsActive(Profiles) | 
+					Window.IsActive(MyWeatherSettings) | 
+					Window.IsActive(NetworkSettings) | 
+					Window.IsActive(SystemSettings) | 
+					Window.IsActive(AppearanceSettings) | 
+					Window.IsActive(1112)
+				</visible>
+				<label>$LOCALIZE[5]</label>
+				<include>BottomSectionTitleNoSubtitle</include>
+			</control>
+			
+			<!-- Weather -->
+			<control type="label">
+				<visible>Window.IsActive(Weather)</visible>
+				<label>$LOCALIZE[8]</label>
+				<include>BottomSectionTitleNoSubtitle</include>
+			</control>
+			
+			<!-- Pictures -->
+			<control type="label">
+				<visible>Window.IsActive(MyPictures)</visible>
+				<label>$LOCALIZE[1213]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			
+			<!-- Scripts -->
+			<control type="label">
+				<visible>Window.IsActive(Scripts)</visible>
+				<label>$LOCALIZE[247]</label>
+				<include>BottomSectionTitleNoSubtitle</include>
+			</control>
+			
+			<!-- App Store -->
+			<control type="label">
+				<visible>Window.IsActive(MyPrograms)</visible>
+				<label>$LOCALIZE[50153]</label>
+				<include>BottomSectionTitleNoSubtitle</include>
+			</control>
+			
+			<!-- Videos -->
+			<control type="label">
+				<visible>false</visible>
+				<label>$LOCALIZE[1212]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			
+			<!-- Movies -->
+			<control type="label">
+				<visible>Container.Content(movies)</visible>
+				<info>Container.FirstTitle</info>
+				<include>BottomSectionTitle</include>
+			</control>
+			
+			<!-- TV Shows -->
+			<control type="label">
+				<visible>Container.Content(tvshows)</visible>
+				<info>Container.FirstTitle</info>
+				<include>BottomSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Container.Content(seasons)</visible>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Container.Content(episodes)</visible>
+				<label>$INFO[ListItem.TVShowTitle]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			
+			<!-- Music -->
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + !Container.Content(songs) + !Container.Content(albums)</visible>
+				<label>$LOCALIZE[1211]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + Container.Content(albums)</visible>
+				<label>$INFO[ListItem.Artist]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary)] + Container.Content(songs)</visible>
+				<label>$INFO[ListItem.Album]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+			<control type="label">
+				<visible>Window.IsActive(musicplaylist)</visible>
+				<label>$LOCALIZE[1211]</label>
+				<include>BottomSectionTitle</include>
+			</control>
+		</control>
+	</include>
+
+	<!-- Clock -->
+	<include name="Clock_Date">
+		<control type="label">
+			<visible>!Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
+			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE]</label>
+			<include>TopSectionSubtitle</include>
+		</control>
+		
+		<control type="label">
+			<visible>
+				Skin.HasSetting(Show_Clock_Bottom_Left) + 
+				!Skin.HasSetting(Enable_Analog_Clock)
+			</visible>
+			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE]</label>
+			<include>BottomSectionSubtitle</include>
+		</control>
+	</include>
+	
+	<include name="Clock_Time">
+		<control type="label">
+			<visible>
+				!Skin.HasSetting(Enable_Analog_Clock) +
+				!Skin.HasSetting(Show_Clock_Bottom_Left)
+			</visible>
+			<info>system.time</info>
+			<include>TopSectionTitle</include>
+		</control>
+		
+		<control type="label">
+			<visible>
+				!Skin.HasSetting(Enable_Analog_Clock) +
+				Skin.HasSetting(Show_Clock_Bottom_Left)
+			</visible>
+			<info>system.time</info>
+			<include>BottomSectionTitle</include>
+		</control>
+	</include>
+	
+	<include name="Clock_Analog">
+		<control type="group">
+			<visible>
+				Skin.HasSetting(Enable_Analog_Clock) +
+				!Skin.HasSetting(Show_Clock_Bottom_Left)
+			</visible>
+			<posx>615</posx>
+			<posy>15</posy>
+			<width>51</width>
+			<height>51</height>
+			<visible></visible>
+			<control type="image">
+				<description>Clock Icon</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\clock_panel.png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Second</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\seconds\$INFO[System.Time(ss)].png</texture>
+				<visible>!Skin.HasSetting(Disable_Clock_Second_Hand)</visible>
+			</control>
+			<control type="image">
+				<description>Clock Minute</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\minutes\$INFO[System.Time(mm)].png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Hour</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\hours\$INFO[System.Time(hh)].png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Cap</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\clock_cap.png</texture>
+			</control>
+		</control>
+		
+		<control type="group">
+			<visible>
+				Skin.HasSetting(Enable_Analog_Clock) +
+				Skin.HasSetting(Show_Clock_Bottom_Left)
+			</visible>
+			<posx>20</posx>
+			<posy>650</posy>
+			<width>51</width>
+			<height>51</height>
+			<visible></visible>
+			<control type="image">
+				<description>Clock Icon</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\clock_panel.png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Second</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\seconds\$INFO[System.Time(ss)].png</texture>
+				<visible>!Skin.HasSetting(Disable_Clock_Second_Hand)</visible>
+			</control>
+			<control type="image">
+				<description>Clock Minute</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\minutes\$INFO[System.Time(mm)].png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Hour</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\hours\$INFO[System.Time(hh)].png</texture>
+			</control>
+			<control type="image">
+				<description>Clock Cap</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>51</width>
+				<height>51</height>
+				<texture>clock\clock_cap.png</texture>
+			</control>
+		</control>
+	</include>
+	
+	<include name="Clock">
+		<include>Clock_Time</include>
+		<include>Clock_Date</include>
+	</include>
+	
+	<include name="AnalogClock">
+		<include>Clock_Analog</include>
+	</include>
+	
+</includes>

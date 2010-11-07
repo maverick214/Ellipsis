@@ -1,0 +1,199 @@
+<window id="50"> 
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+	
+		<control type="group">
+			<animation type="WindowOpen">
+				<effect type="fade" time="400" start="0" end="100" />
+				<effect type="slide" time="400" start="0,-134" end="0,0" easing="out" tween="cubic" />
+			</animation>
+			<animation type="WindowClose">
+				<effect type="fade" time="400" start="100" end="0" />
+				<effect type="slide" time="400" start="0,0" end="0,-134" easing="in" tween="cubic" />
+			</animation>		
+		</control>
+		
+		<!-- Backgrounds -->
+		<include>Background</include>
+		
+		<!-- Clock -->
+		<include>Clock</include>
+		
+		<!-- Now Playing -->
+		<control type="group">
+			<visible>!Skin.HasSetting(alt_nowplaying)</visible>
+					
+			<!-- Fanart Slideshow -->
+			<control type="multiimage">
+				<description>artist slideshow</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>720</height>
+				<imagepath>$INFO[Skin.String(artistbackdroppath)]/$INFO[MusicPlayer.Artist]</imagepath>
+				<timeperimage>4000</timeperimage>
+				<fadetime>2000</fadetime>
+				<pauseatend>4000</pauseatend>
+				<randomize>true</randomize>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+			</control>
+			
+			<!-- Time Elapsed -->
+			<control type="label">
+				<visible>Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
+				<description>Time Elapsed</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<width>1280</width>
+				<height>50</height>
+				<align>center</align>
+				<label>$INFO[MusicPlayer.Time]</label>
+				<font>Time</font>
+				<textcolor>ClockDateTime</textcolor>
+			</control>
+			
+			<control type="label">
+				<visible>!Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
+				<description>Time Elapsed</description>
+				<posx>20</posx>
+				<posy>605</posy>
+				<width>1280</width>
+				<height>50</height>
+				<align>left</align>
+				<label>$INFO[MusicPlayer.Time]</label>
+				<font>Time</font>
+				<textcolor>Text</textcolor>
+			</control>
+			
+			<!-- Time Elapsed / Duration -->
+			<control type="label">
+				<visible>Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
+				<description>Time Elapsed / Duration</description>
+				<posx>0</posx>
+				<posy>88</posy>
+				<width>1280</width>
+				<align>center</align>
+				<label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+				<font>Date</font>
+				<textcolor>ClockDateTime</textcolor>
+			</control>
+			
+			<control type="label">
+				<visible>!Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
+				<description>Time Elapsed / Duration</description>
+				<posx>20</posx>
+				<posy>670</posy>
+				<width>1280</width>
+				<align>left</align>
+				<label>$INFO[MusicPlayer.Time] / $INFO[MusicPlayer.Duration]</label>
+				<font>Date_Bottom</font>
+				<textcolor>Text</textcolor>
+			</control>
+			
+			<!-- Album Cover -->
+			<control type="group">
+				<posx>640</posx>
+				<posy>200</posy>
+				<width>392</width>
+				<height>593</height>
+				<control type="image">
+					<posx>92</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>300</height>
+					<texture>record.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio align="center" scalediffuse="false">scale</aspectratio>
+					<texture diffuse="record-diffuse.png">$INFO[MusicPlayer.Cover]</texture> 
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>300</width>
+					<height>300</height>
+					<texture>record-front.png</texture>
+				</control>	
+				<control type="image">
+					<posx>92</posx>
+					<posy>274</posy>
+					<width>300</width>
+					<height>300</height>
+					<texture flipy="true" diffuse="fade.png">record_now_playing.png</texture>
+				</control>
+				<control type="image">
+					<posx>0</posx>
+					<posy>274</posy>
+					<width>300</width>
+					<height>300</height>
+					<aspectratio align="center" scalediffuse="false">scale</aspectratio>
+					<texture flipy="true" diffuse="record-reflect-diffuse.png">$INFO[MusicPlayer.Cover]</texture> 
+				</control>
+			</control>
+			
+			<!-- Track Information -->
+			<control type="group">
+				<posx>620</posx>
+				<posy>268</posy>
+				<control type="label">
+					<posx>0</posx>
+					<posy>0</posy>
+					<width>600</width>
+					<height>27</height>
+					<align>right</align>
+					<font>Large</font>
+					<textcolor>Text</textcolor>
+					<label>$INFO[MusicPlayer.Artist]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>50</posy>
+					<width>600</width>
+					<height>40</height>
+					<align>right</align>
+					<font>Extra_Large</font>
+					<textcolor>Text</textcolor>
+					<label>$INFO[MusicPlayer.Title]</label>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>120</posy>
+					<width>600</width>
+					<height>27</height>
+					<align>right</align>
+					<font>Large</font>
+					<textcolor>Text</textcolor>
+					<label>$INFO[MusicPlayer.Album]</label>
+				</control>
+			</control>
+			
+			<!-- Next Song -->
+			<control type="label">
+				<description>Next Song</description>
+				<posx>0</posx>
+				<posy>635</posy>
+				<width>1280</width>
+				<align>center</align>
+				<label>Next: $INFO[MusicPlayer.offset(1).Artist] - $INFO[MusicPlayer.offset(1).Title]</label>
+				<font>Date</font>
+				<textcolor>ClockDateTime</textcolor>
+			</control>
+		</control>
+				
+		<!-- Elipsis Visor -->
+		<include>Visor_Filter</include>
+
+		<!-- Edge Filter -->
+		<include>Edge_Filter</include>
+		
+		<!-- Analog Clock -->
+		<include>AnalogClock</include>
+		
+	</controls>
+</window>

@@ -1,0 +1,89 @@
+<window id="2004">
+	<defaultcontrol always="true">22</defaultcontrol>
+	<include>Fade_In_WindowOpen</include>
+	<include>Fade_Out_WindowClose</include>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
+	<controls>
+	
+		<control type="image">
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>filter_keyboard_shadow.png</texture>
+		</control>
+		
+		<control type="group">
+			
+			<include>Zoom_In_WindowOpen</include>
+			<include>Zoom_Out_WindowClose</include>
+		
+			<control type="image">
+				<description>background image</description>
+				<posx>64</posx>
+				<posy>35</posy>
+				<width>1151</width>
+				<height>708</height>
+				<texture>dialogs\dialog-background-verytall.png</texture>
+			</control>
+			
+			<control type="group">
+			
+				<posx>125</posx>
+				<posy>84</posy>
+				<width>1030</width>
+				<height>557</height>
+				
+				<control type="image">
+					<description>dialog icon</description>
+					<posx>494</posx>
+					<posy>23</posy>
+					<width>42</width>
+					<height>42</height>
+					<texture>dialogs\script-info-dialog-icon.png</texture>
+				</control>
+				
+				<control type="label" id="1">
+					<description>heading label</description>
+					<posx>0</posx>
+					<posy>68</posy>
+					<width>1030</width>
+					<align>center</align>
+					<font>Heading</font>
+					<label>[UPPERCASE]$LOCALIZE[262][/UPPERCASE]</label>
+					<textcolor>Text</textcolor>
+				</control>
+				
+				<control type="image">
+					<posx>50</posx>
+					<posy>120</posy>
+					<width>910</width>
+					<height>438</height>
+					<texture border="10,10,10,10">menu\library\panel-light.png</texture>
+					<colordiffuse>LibraryPanelDiffuse</colordiffuse>
+				</control>
+	
+				<control type="textbox" id="5">
+					<posx>65</posx>
+					<posy>130</posy>
+					<width>880</width>
+					<height>418</height>
+					<label>-</label>
+					<font>Medium</font>
+					<align>justify</align>
+					<autoscroll delay="6000" time="2000" repeat="10000">true</autoscroll>
+				</control>
+
+			</control>		
+			
+		</control>
+
+		<include>Debug</include>
+
+	</controls>
+</window>
+		
