@@ -7,7 +7,7 @@
 			<posx>614</posx>
 			<posy>140</posy>
 			<visible>Control.IsVisible(51)</visible>
-			<visible>!Container.Content(Episodes) + !Container.Content(MusicVideos)</visible>
+			<visible>!Container.Content(Episodes) + !Container.Content(PluginContent)</visible>
 			
 			<!-- Show Case Hybrid View Icons - Counter Clockwise Mothion -->
 			<control type="group" id="15101">
@@ -1098,7 +1098,7 @@
 			<posx>0</posx>
 			<posy>0</posy>
 			<visible>Control.IsVisible(52)</visible>
-			<visible>Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
+			<visible>Container.Content(Episodes) | Container.Content(PluginContent)</visible>
 			
 			<!-- Show Case Hybrid View Wide Icons - Counter Clockwise Mothion -->
 			<control type="group" id="25101">
@@ -1675,7 +1675,7 @@
 			<posy>160</posy>
 			<width>656</width>
 			<height>390</height>
-			<visible>!Container.Content(Episodes) + !Container.Content(MusicVideos)</visible>
+			<visible>!Container.Content(Episodes) + !Container.Content(PluginContent)</visible>
 			<onup>ActivateWindow(1201)</onup>
 			<ondown>ActivateWindow(1201)</ondown>
 			<orientation>horizontal</orientation>
@@ -1693,7 +1693,7 @@
 			<posy>160</posy>
 			<width>656</width>
 			<height>390</height>
-			<visible>Container.Content(Episodes) | Container.Content(MusicVideos)</visible>
+			<visible>Container.Content(Episodes) | Container.Content(PluginContent)</visible>
 			<onleft>ActivateWindow(1201)</onleft>
 			<onright>ActivateWindow(1201)</onright>
 			<onup>52</onup>

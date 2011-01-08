@@ -664,7 +664,7 @@
 				<control type="group">
 				
 					<visible>Control.IsVisible(52)</visible>
-					<visible>Container.Content(Episodes)</visible>
+					<visible>Container.Content(Episodes) | Container.Content(plugincontent)</visible>
 				
 					<posx>44</posx>
 					<posy>185</posy>
@@ -880,7 +880,7 @@
 							<label>$LOCALIZE[50065]</label>
 							<align>right</align>
 							<aligny>bottom</aligny>
-							<visible>!Container.Content(secondary)</visible>
+							<visible>!Container.Content(secondary) + !Container.Content(plugincontent)</visible>
 						</control>
 						
 						<control type="image">
@@ -889,7 +889,7 @@
 							<width>22</width>
 							<height>22</height>
 							<texture>menu\library\info-icon.png</texture>
-							<visible>!Container.Content(secondary)</visible>
+							<visible>!Container.Content(secondary) + !Container.Content(plugincontent)</visible>
 						</control>
 						
 						<control type="grouplist">

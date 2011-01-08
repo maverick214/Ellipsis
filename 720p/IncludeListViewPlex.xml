@@ -1,15 +1,15 @@
 <includes>
-	<include name="List_View">
+	<include name="List_View_Plex">
 	
-		<control type="list" id="50">	
+		<control type="list" id="60">	
 			<posx>108</posx>
 			<posy>176</posy>
 			<width>1064</width>
 			<height>368</height>
 			<onleft>ActivateWindow(1201)</onleft>
 			<onright>ActivateWindow(1201)</onright>
-			<onup>50</onup>
-			<ondown>50</ondown>
+			<onup>60</onup>
+			<ondown>60</ondown>
 			<viewtype label="535">list</viewtype>
 			<pagecontrol>-</pagecontrol>
 			<scrolltime>200</scrolltime>
@@ -50,7 +50,7 @@
 					<textcolor>Text</textcolor>
 					<align>left</align>
 					<info>ListItem.Label</info>
-					<visible>Container.Content(Episodes) + !Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
+					<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)] + !Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
 				</control>
 				<control type="label">
 					<posx>55</posx>
@@ -63,7 +63,7 @@
 					<textcolor>Text</textcolor>
 					<align>left</align>
 					<info>ListItem.Label</info>
-					<visible>!Container.Content(Episodes) | Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
+					<visible>![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)] | Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
 				</control>
 				
 				
@@ -87,7 +87,7 @@
 					<width>1064</width>
 					<height>46</height>
 					<texture border="4,5,6,8">controls\button_nf.png</texture>
-					<visible>!Control.HasFocus(50)</visible>
+					<visible>!Control.HasFocus(60)</visible>
 				</control>
 				<control type="image">
 					<posx>0</posx>
@@ -95,7 +95,7 @@
 					<width>1064</width>
 					<height>46</height>
 					<texture border="4,5,6,8">controls\button_f.png</texture>
-					<visible>Control.HasFocus(50)</visible>
+					<visible>Control.HasFocus(60)</visible>
 				</control>
 				<control type="image">
 					<posx>10</posx>
@@ -112,7 +112,7 @@
 					<height>46</height>
 					<texture>overlays\list_fo\$INFO[ListItem.Overlay]</texture>
 					<visible>!Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
-					<visible>Control.HasFocus(50) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
+					<visible>Control.HasFocus(60) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
 				</control>
 				<control type="image">
 					<posx>55</posx>
@@ -120,8 +120,8 @@
 					<width>46</width>
 					<height>46</height>
 					<texture>overlays\list_nf\$INFO[ListItem.Overlay]</texture>
-					<visible>!Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
-					<visible>!Control.HasFocus(50) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
+					<visible>!Skin.HasSetting(Disable_Unwatched_Overlay) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
+					<visible>!Control.HasFocus(60)</visible>
 				</control>
 				
 				<control type="label">
@@ -135,8 +135,8 @@
 					<textcolor>Text</textcolor>
 					<align>left</align>
 					<info>ListItem.Label</info>
-					<visible>Container.Content(Episodes) + !Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
-				</control>-->
+					<visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)] + !Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
+				</control>
 				<control type="label">
 					<posx>55</posx>
 					<posy>4</posy>
@@ -148,7 +148,7 @@
 					<textcolor>Text</textcolor>
 					<align>left</align>
 					<info>ListItem.Label</info>
-					<visible>!Container.Content(Episodes) | Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
+					<visible>![Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)] | Skin.HasSetting(Disable_Unwatched_Overlay)</visible>
 				</control>
 	
 				
@@ -170,7 +170,7 @@
 		<control type="group">
 			<posx>569</posx>
 			<posy>289</posy>
-			<visible>Control.IsVisible(50)</visible>
+			<visible>Control.IsVisible(60)</visible>
 			<include>Sort_Letter</include>
 		</control>	
 		
