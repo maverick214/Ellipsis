@@ -1029,7 +1029,7 @@
 	<include name="Clock_Date">
 		<control type="label">
 			<visible>!Skin.HasSetting(Show_Clock_Bottom_Left)</visible>
-			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE]</label>
+			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE] [UPPERCASE]$INFO[Weather.Temperature][/UPPERCASE]</label>
 			<include>TopSectionSubtitle</include>
 		</control>
 		
@@ -1038,7 +1038,7 @@
 				Skin.HasSetting(Show_Clock_Bottom_Left) + 
 				!Skin.HasSetting(Enable_Analog_Clock)
 			</visible>
-			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE]</label>
+			<label>[UPPERCASE]$INFO[system.date][/UPPERCASE] [UPPERCASE]$INFO[Weather.Temperature][/UPPERCASE]</label>
 			<include>BottomSectionSubtitle</include>
 		</control>
 	</include>
