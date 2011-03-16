@@ -165,16 +165,16 @@
 		    <onclick>Plex.ActivateWindow(1,plex://localhost/system/appstore,return)</onclick>
 		</item>
 	</include>
-<!--
-	<include name="Menu_FileManager">
+
+	<include name="Menu_Search">
 		<item id="9109">
-			<visible>!Skin.HasSetting(Disable_File_Manager_Home_Icon)</visible>
-			<icon>icon_home_filemanager.png</icon>
-			<label>$LOCALIZE[7]</label>
-			<onclick>ActivateWindow(MyFiles)</onclick>
+			<visible>!Skin.HasSetting(Disable_Search_Home_Icon)</visible>
+			<icon>search.png</icon>
+			<label>$LOCALIZE[137]</label>
+			<onclick>ActivateWindow(51)</onclick>
 		</item>
 	</include>
--->
+
 	<include name="Menu_Weather">
 		<item id="9110">
 			<visible>!Skin.HasSetting(Disable_Weather_Home_Icon)</visible>
@@ -1177,7 +1177,7 @@
 					<include>Menu_Play_DVD</include>
 					<include>Menu_Pictures</include>
 					<include>Menu_App_Store</include>
-		<!--		<include>Menu_FileManager</include> -->
+					<include>Menu_Search</include> 
 					<include>Menu_Weather</include>
 					<include>Menu_Settings</include>
 		<!--		<include>Menu_Scripts</include>  -->

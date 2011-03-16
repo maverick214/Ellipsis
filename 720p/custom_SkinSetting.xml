@@ -242,7 +242,7 @@
 				<enable>Skin.HasSetting(Enable_Analog_Clock)</enable>
 				<pulseonselect>false</pulseonselect>
 			</control>
-
+<!--
 			<control type="radiobutton" id="104">
 				<visible>ControlGroup(9000).HasFocus(30)</visible>
 				<label>$LOCALIZE[50001]</label>
@@ -261,7 +261,7 @@
 				<selected>Skin.HasSetting(Enable_Cerberus_Background_Effect)</selected>
 				<pulseonselect>false</pulseonselect>
 			</control>
-			
+-->			
 			<control type="radiobutton" id="105">
 				<visible>ControlGroup(9000).HasFocus(30)</visible>
 				<label>$LOCALIZE[50002]</label>
