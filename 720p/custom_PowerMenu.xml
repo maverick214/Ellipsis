@@ -79,7 +79,7 @@
 				
 				<control type="button" id="100">
 					<description>Dashboard</description>
-					<label>$LOCALIZE[13006]</label>
+					<label>13011</label>
 					<posx>30</posx>
 					<posy>0</posy>
 					<width>273</width>
@@ -91,8 +91,7 @@
 					<texturenofocus border="4,5,6,8">controls\button_nf.png</texturenofocus>
 					<pulseonselect>false</pulseonselect>
 					<onclick>dialog.close(all,true)</onclick>
-					<onclick>XBMC.Quit()</onclick>
-					<visible>System.Platform.Xbox </visible>
+					<onclick>XBMC.SleepSystem()</onclick>
 				</control>
 				
 				<control type="button" id="101">
@@ -128,7 +127,22 @@
 					<pulseonselect>false</pulseonselect>
 					<onclick>XBMC.RestartApp</onclick>
 				</control>
-								
+				<control type="button" id="103">
+					<description>Shutdown Mac</description>
+					<label>Shutdown Mac</label>
+					<posx>30</posx>
+					<posy>0</posy>
+					<width>273</width>
+					<height>46</height>
+					<font>Default</font>
+					<textoffsetx>15</textoffsetx>
+					<align>center</align>
+					<texturefocus border="4,5,6,8">controls\button_power_f.png</texturefocus>
+					<texturenofocus border="4,5,6,8">controls\button_nf.png</texturenofocus>
+					<pulseonselect>false</pulseonselect>
+					<onclick>XBMC.ShutDown()</onclick>
+				</control>
+<!--								
 				<control type="group" id="104">
 
 					<height>46</height>
@@ -314,7 +328,7 @@
 					</control>
 
 				</control>
-												
+-->											
 				<control type="button" id="105">
 					<description>Suspend</description>
 					<visible>!Skin.HasSetting(ShutdownUseHibernate)</visible>

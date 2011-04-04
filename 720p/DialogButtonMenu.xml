@@ -318,7 +318,6 @@
 				<control type="button" id="105">
 					<description>Suspend</description>
 					<visible>!Skin.HasSetting(ShutdownUseHibernate)</visible>
-					<visible>System.CanSuspend</visible>
 					<label>13011</label>
 					<posx>30</posx>
 					<posy>0</posy>
@@ -337,7 +336,6 @@
 				<control type="button" id="106">
 					<description>Hibernate</description>
 					<visible>Skin.HasSetting(ShutdownUseHibernate)</visible>
-					<visible>System.CanHibernate</visible>
 					<label>13010</label>
 					<posx>30</posx>
 					<posy>0</posy>
